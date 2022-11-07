@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.example.praktika.MenuFragmentDirections
 import com.example.praktika.R
 import com.example.praktika.model.Product
 import com.google.android.material.button.MaterialButton
@@ -60,6 +62,23 @@ class RecyclerViewAdapter(private val fragment: Fragment) :
             minusButton.visibility = View.GONE
             counter.visibility = View.GONE
             plusButton.visibility = View.GONE
+
+            foodButton.setOnClickListener {
+                fragment.findNavController().navigate(
+                    MenuFragmentDirections.actionMenuFragmentToFoodMenuDetailsFragment(
+                        card.id,
+                        card.name,
+                        card.description,
+                        card.measure,
+                        card.energyPer100Grams.toFloat(),
+                        card.proteinsPer100Grams.toFloat(),
+                        card.fatsPer100Grams.toFloat(),
+                        card.carbohydratesPer100Grams.toFloat(),
+                        card.measureUnit,
+                        card.priceCurrent
+                    )
+                )
+            }
         }
     }
 }

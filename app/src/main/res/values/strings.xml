@@ -8,4 +8,10 @@
     <string name="logo">Логотип</string>
     <string name="backButton">Кнопка назад</string>
     <string name="picture">Изображение еды</string>
+    <string name="weight">Вес</string>
+    <string name="energy">Энерг. ценность</string>
+    <string name="proteins">Белки</string>
+    <string name="fats">Жиры</string>
+    <string name="carbohydrates">Углеводы</string>
+    <string name="empty_cart">Пусто, выберите блюда в каталоге :)</string>
 </resources>
